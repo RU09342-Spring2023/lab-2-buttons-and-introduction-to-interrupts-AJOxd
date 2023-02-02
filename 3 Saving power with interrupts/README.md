@@ -28,6 +28,9 @@ In this example, the CPU itself is spending all of its time running that loop. T
 
 Import the Part3.c code into your project, and comment out the "runCodeWithInterrupts()" function. Make sure the "runCodeWithPolling()" function is uncommented. Run the code and see how it works. Then, remove the J11 Jumper connecting the LED to the Microcontroller, and run Energy Trace to see how the power consumption of the microcontroller is impacted when you are pressing the button.
 
+![image](https://user-images.githubusercontent.com/35088606/216470163-13b40811-fc57-4d87-8406-a2b8bde065fb.png)
+
+
 ## Using Interrupts
 If we look at an example based around using an interrupt, we can see an interesting thing happening.
 
@@ -69,6 +72,9 @@ When the button is pressed, the interrupt vector is fired and the CPU wakes up, 
 
 ### Task: Power Consumption of the Interrupts
 Run the code in Part3.c, but this time uncomment the runCodeWithInterrupts() function, while commenting out the runCodeWithPolling line. See how the device works and see if you can use breakpoints to catch the code when you are pressing the button.
+
+![image](https://user-images.githubusercontent.com/35088606/216470389-fddbae28-440d-43d9-aea7-0f54f8bba324.png)
+
 
 Then load up Energy Trace and perform the similar capture of Power with the LED Jumper taken off. Compare the two graphs and see if you can explain two things:
 1. What is causing the bias/baseline in the polling example to be higher than the interrupt example.
