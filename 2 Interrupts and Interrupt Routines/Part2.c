@@ -1,8 +1,8 @@
 /*
  *  Button Interrupt Example
  *
- *  Created on: Jan 30, 2023
- *      Author: Russell Trafford
+ *  Created on: Feb 2, 2023
+ *      Author: Andrew O'Donnell
  *      Version: 1.0
  *
  *      This example will show you how to configure an Interrupt and Interrupt Service Routine.
@@ -23,10 +23,12 @@ int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;               // Stop watchdog timer
 
-    // Configure GPIO
+    // Configure GPIO. Red LED stuff
     P1OUT &= ~BIT0;                         // Clear P1.0 output latch for a defined power-on state
     P1DIR |= BIT0;                          // Set P1.0 to output direction
-
+    // green led configuration
+    P6OUT &= ~BIT6;                         // Clear P6.0 output latch for a defined power-on state
+    P6DIR |= BIT6;                          // Set P6.0 to output direction
     // @TODO You need to add in the configuration for the Green LED
 
     P2OUT |= BIT3;                          // Configure P2.3 as pulled-up
@@ -46,9 +48,11 @@ int main(void)
     {
         // @TODO You will need to modify this code to change between blinking the Red LED or the Green LED
         if (ToggleEnable)
-            P1OUT ^= BIT0;                  // P1.0 = toggle
+            P6OUT ^= BIT6;                  // P1.0 = toggle
+                           // P6.0 = toggle
         else
-            P1OUT &= ~BIT0;                 // Set P1.0 to 0
+            P6OUT &= ~BIT6;                 // Set P1.0 to 0
+            //P6OUT &= ~BIT6;                 // setting P6.0 to 0
         __delay_cycles(100000);
     }
 }
