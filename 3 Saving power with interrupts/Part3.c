@@ -1,8 +1,8 @@
 /*
  *  Energy Trace Example
  *
- *  Created on: Jan 30, 2023
- *      Author: Russell Trafford
+ *  Created on: Feb 2, 2023
+ *      Author: Andrew O'Donnell
  *      Version: 1.0
  *
  *      This example will show you the power consumption and energy consumption differences between polling and using an interrupt to turn on a processor.
